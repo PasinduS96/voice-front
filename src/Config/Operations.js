@@ -153,6 +153,7 @@ export const createInterview = async (name, date) => {
 
 export const createCandidate = async (interview, name, email) => {
   try {
+    console.log(interview);
     let question = await fetch(`${BASE_URL}/createCandidate/${interview}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

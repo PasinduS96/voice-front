@@ -16,6 +16,7 @@ import { VscDebugStart } from "react-icons/vsc";
 import { ImStop } from "react-icons/im";
 import { VscSave } from "react-icons/vsc";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import { BiHome } from "react-icons/bi";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -184,25 +185,40 @@ const QuizList = (props) => {
         );
       })}
       <div class="row justify-content-center">
-        <a
+        <button
           className="btn btn-lg btn-outline-info"
           style={{
             marginTop: 20,
-            height: 80,
-            width: 500,
+            height: 60,
+            width: 400,
             fontSize: 30,
             marginBottom: 50,
+            marginRight: 20,
           }}
           onClick={() => {
             changeOralState(
               props.match.params.candidateid,
               props.match.params.id,
-              total
+              total / 10
             );
+            alert.success("Interview Completed!");
+          }}
+          type="button"
+        >
+          Finish Interview <FaRegCalendarCheck />
+        </button>
+        <a
+          className="btn btn-lg btn-outline-primary"
+          style={{
+            marginTop: 20,
+            height: 60,
+            width: 400,
+            fontSize: 30,
+            marginBottom: 50,
           }}
           href={`/candiates/${props.match.params.id}`}
         >
-          Finish Interview <FaRegCalendarCheck />
+          Home <BiHome />
         </a>
       </div>
     </div>

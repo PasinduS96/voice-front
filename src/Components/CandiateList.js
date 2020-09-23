@@ -49,6 +49,7 @@ const CandidateList = (props) => {
 
   useState(() => {
     getCandidates(props.match.params.name).then((res) => {
+      console.log(props.match.params.name);
       setList(res);
     });
   }, []);
